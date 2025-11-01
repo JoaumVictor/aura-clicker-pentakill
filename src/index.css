@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fire {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: rotate(5deg) scale(1.05);
+    opacity: 0.95;
+  }
+  50% {
+    transform: rotate(-5deg) scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(5deg) scale(1.03);
+    opacity: 0.98;
+  }
+  100% {
+    transform: rotate(5deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fire {
+  animation: fire 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+@font-face {
+  font-family: "pentakill";
+  font-weight: normal;
+  font-style: normal;
+  src: url("./assets/fonts/tungsten-bold.woff2");
+}
+
+@layer base {
+  :root {
+    /* PENTAKILL Design System - Valorant Inspired */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Cyber Blue Primary */
+    --primary: 228 99% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light Gray Background */
+    --secondary: 0 0% 89%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    /* HALLOWEEN 2025 COLORS */
+    /* --primary: 24, 100%, 55%; */
+    /* --accent: 18, 86%, 39%; */
+
+    /* Purple Accent */
+    --accent: 270 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 228 99% 59%;
+
+    --radius: 0rem;
+
+    /* Brand Colors */
+    --cyber-blue: 228 99% 59%;
+    --neon-purple: 270 100% 50%;
+    --neon-red: 350 100% 55%;
+    --neon-green: 140 100% 50%;
+    --neon-yellow: 50 100% 65%;
+    --electric-cyan: 180 100% 50%;
+
+    --dark-gray: 0 0% 8%;
+    --light-gray: 0 0% 89%;
+  }
+}
+
+@layer utilities {
+  .diagonal-lines {
+    background-image: linear-gradient(
+        45deg,
+        transparent 48%,
+        hsl(var(--primary) / 0.03) 49%,
+        hsl(var(--primary) / 0.03) 51%,
+        transparent 52%
+      ),
+      linear-gradient(
+        -45deg,
+        transparent 48%,
+        hsl(var(--neon-purple) / 0.03) 49%,
+        hsl(var(--neon-purple) / 0.03) 51%,
+        transparent 52%
+      );
+    background-size: 100px 100px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "pentakill", sans-serif;
+    font-size: 20px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "pentakill", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50px);
+    opacity: 0;
+  }
+}
