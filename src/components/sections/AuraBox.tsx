@@ -83,6 +83,7 @@ const AuraBox: React.FC = () => {
               formattingFn={formatNumber}
               preserveValue
               duration={0.5}
+              decimals={1}
             />
           </p>
         </div>

@@ -1,12 +1,13 @@
 // pages/aura.tsx
 import bghands1 from "@/assets/images/backgrounds/bg-hands-1.png";
-import bghands2 from "@/assets/bg-aura/bg-hands-2.png";
-import bghands3 from "@/assets/bg-aura/bg-hands-3.png";
-import bghands4 from "@/assets/bg-aura/bg-hands-4.png";
+import bghands2 from "@/assets/images/backgrounds/bg-hands-2.png";
+import bghands3 from "@/assets/images/backgrounds/bg-hands-3.png";
+import bghands4 from "@/assets/images/backgrounds/bg-hands-4.png";
 import AdminPanel from "@/components/sections/AdminPanel";
 import AuraBox from "@/components/sections/AuraBox";
 import ImprovementShop from "@/components/sections/ImprovementShop";
 import UpgradeShop from "@/components/sections/UpgradeShop";
+const ACCESS_CODE = import.meta.env.VITE_ADMIN_ACCESS_CODE;
 
 const Aura = () => {
   return (
@@ -14,11 +15,11 @@ const Aura = () => {
       className="min-h-screen w-full relative overflow-hidden bg-gray-950"
       onDragStart={(e) => e.preventDefault()}
     >
-      <AdminPanel />
+      {ACCESS_CODE && <AdminPanel />}
 
       <div className="absolute inset-0 z-0">
         <img
-          src={bghands1}
+          src={bghands2}
           alt="Fundo místico com mãos"
           className="w-full h-full object-cover opacity-20"
         />
